@@ -25,29 +25,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #undef MATRIX_ROW_PINS
 #undef MATRIX_COL_PINS
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-#define MATRIX_ROW_PINS { B8, B9, C13, B7, B6, B5, B3 }
-#define MATRIX_COL_PINS { A0, A1, A2, A3, A4, A5, A6, A7, B0, B1, B10, B11 }
+#define MATRIX_ROW_PINS { B8, B9, C13, B7, B6, B4, B3 }
+#define MATRIX_COL_PINS { B11, B10, B1, B0, A7, A6, A5, A4, A3, A2, A1, A0 }
 
 #define NUM_LOCK_LED_PIN A8
 #define CAPS_LOCK_LED_PIN B15
 #define SCROLL_LOCK_LED_PIN B15
 #define LED4_PIN B13
-=======
-#define MATRIX_ROW_PINS { B8, B9, C13, A0, A1, B0, A3, A4 }
-#define MATRIX_COL_PINS { B7, B6, B5, B4, B3, A15, A10, A9, A8, B15, B14, B13, A13, B11, B10, B1 }
 
-#define NUM_LOCK_LED_PIN A7
-#define CAPS_LOCK_LED_PIN A6
-#define SCROLL_LOCK_LED_PIN A5
->>>>>>> 0bf8ab975... kinesis80
-=======
-#define MATRIX_ROW_PINS { B8, B9, C13, B7, B6, B5, B3 }
-#define MATRIX_COL_PINS { A0, A1, A2, A3, A4, A5, A6, A7, B0, B1, B10, B11 }
-
-#define NUM_LOCK_LED_PIN A8
-#define CAPS_LOCK_LED_PIN B15
-#define SCROLL_LOCK_LED_PIN B15
-#define LED4_PIN B13
->>>>>>> 8312d7288... kinesis80: black pill fix
