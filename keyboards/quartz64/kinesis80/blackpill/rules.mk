@@ -1,24 +1,15 @@
-MCU_FAMILY = STM32
-MCU_SERIES = STM32F1xx
-MCU_STARTUP = stm32f1xx
-MCU  = cortex-m3
-ARMV = 7
-
-# If you want to be able to jump to bootloader from firmware on STM32 MCUs,
-# set the correct BOOTLOADER_ADDRESS. Either set it here, or define it in
-# ./bootloader_defs.h or in ./boards/<FOO>/bootloader_defs.h (if you have
-# a custom board definition that you plan to reuse).
-# If you're not setting it here, leave it commented out.
-# It is chip dependent, the correct number can be looked up here (page 175):
-# http://www.st.com/web/en/resource/technical/document/application_note/CD00167594.pdf
-# This also requires a patch to chibios:
-#   <tmk_dir>/tmk_core/tool/chibios/ch-bootloader-jump.patch
-#STM32_BOOTLOADER_ADDRESS = 0x1FFFC800
+MCU = STM32F103
 
 # GENERIC STM32F103C8T6 board - stm32duino bootloader
 OPT_DEFS = -DCORTEX_VTOR_INIT=0x2000
 MCU_LDSCRIPT = STM32F103x8_stm32duino_bootloader
-BOARD = GENERIC_STM32_F103
+BOARD = STM32_F103_STM32DUINO
+
+DFU_ARGS = -d 1eaf:0003 -a2 -R
+DFU_SUFFIX_ARGS = -v 1eaf -p 0003
+
+# Enter lower-power sleep mode when on the ChibiOS idle thread
+OPT_DEFS += -DCORTEX_ENABLE_WFI_IDLE=TRUE
 
 # GENERIC STM32F103C8T6 board - HID bootloader 4k
 #OPT_DEFS = -DCORTEX_VTOR_INIT=0x1000
@@ -37,16 +28,8 @@ CONSOLE_ENABLE = yes        # Console for debug(+400)
 COMMAND_ENABLE = yes         # Commands for debug and configuration
 # Do not enable SLEEP_LED_ENABLE. it uses the same timer as BACKLIGHT_ENABLE
 SLEEP_LED_ENABLE = no       # Breathing sleep LED during USB suspend
+NKRO_ENABLE = yes            # USB Nkey Rollover
 # if this doesn't work, see here: https://github.com/tmk/tmk_keyboard/wiki/FAQ#nkro-doesnt-work
-<<<<<<< HEAD
-<<<<<<< HEAD
-NKRO_ENABLE = yes            # USB Nkey Rollover
-=======
-NKRO_ENABLE = no            # USB Nkey Rollover
->>>>>>> 0bf8ab975... kinesis80
-=======
-NKRO_ENABLE = yes            # USB Nkey Rollover
->>>>>>> 8312d7288... kinesis80: black pill fix
 BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality on B7 by default
 CUSTOM_MATRIX = no 	        # Custom matrix file
 RGBLIGHT_ENABLE = no        # Enable keyboard RGB underglow
