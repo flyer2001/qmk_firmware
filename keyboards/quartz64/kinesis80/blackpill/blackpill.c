@@ -25,18 +25,11 @@ void matrix_init_kb(void) {
   setPinOutput(CAPS_LOCK_LED_PIN);
   setPinOutput(SCROLL_LOCK_LED_PIN);
   
-<<<<<<< HEAD
-  writePinHigh(NUM_LOCK_LED_PIN);
-  writePinHigh(CAPS_LOCK_LED_PIN);
-  writePinHigh(SCROLL_LOCK_LED_PIN);
-  writePinHigh(LED4_PIN);
-=======
   writePinLow(NUM_LOCK_LED_PIN);
   writePinLow(CAPS_LOCK_LED_PIN);
   writePinLow(SCROLL_LOCK_LED_PIN);
   writePinLow(LED4_PIN);
->>>>>>> c9aec280d87f47e2b8066dc179a5d19d2614f166
-  
+
 	matrix_init_user();
 }
 
@@ -68,8 +61,4 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
 
     return process_record_user(keycode, record);
 }
-<<<<<<< HEAD
 */
-=======
-*/
->>>>>>> c9aec280d87f47e2b8066dc179a5d19d2614f166
