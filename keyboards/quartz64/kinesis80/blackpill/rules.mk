@@ -36,6 +36,12 @@ RGBLIGHT_ENABLE = no        # Enable keyboard RGB underglow
 MIDI_ENABLE = no            # MIDI support (+2400 to 4200, depending on config)
 UNICODE_ENABLE = no         # Unicode
 BLUETOOTH_ENABLE = no       # Enable Bluetooth with the Adafruit EZ-Key HID
+<<<<<<< HEAD
 AUDIO_ENABLE = no           # Audio output on port C6
 FAUXCLICKY_ENABLE = no      # Use buzzer to emulate clicky switches
 HD44780_ENABLE = no 		    # Enable support for HD44780 based LCDs (+400)
+=======
+AUDIO_ENABLE = yes           # Audio output on port C6
+FAUXCLICKY_ENABLE = no      # Use buzzer to emulate clicky switches
+HD44780_ENABLE = no 		    # Enable support for HD44780 based LCDs (+400)
+>>>>>>> c9aec280d87f47e2b8066dc179a5d19d2614f166

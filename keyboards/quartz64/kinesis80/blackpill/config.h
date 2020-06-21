@@ -33,3 +33,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define SCROLL_LOCK_LED_PIN B15
 #define LED4_PIN A8
 
+<<<<<<< HEAD
+=======
+#define A9_AUDIO
+>>>>>>> c9aec280d87f47e2b8066dc179a5d19d2614f166

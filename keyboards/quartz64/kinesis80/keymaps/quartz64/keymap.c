@@ -200,6 +200,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 layer_state_t layer_state_set_user(layer_state_t state) {
     switch (get_highest_layer(state)) {
     case _MC:
+<<<<<<< HEAD
         writePinLow(LED4_PIN);
         break;
     default: //  for any other layers, or the default layer
@@ -208,3 +209,13 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     }
   return state;
 }
+=======
+        writePinHigh(LED4_PIN);
+        break;
+    default: //  for any other layers, or the default layer
+        writePinLow(LED4_PIN);
+        break;
+    }
+  return state;
+}
+>>>>>>> c9aec280d87f47e2b8066dc179a5d19d2614f166
