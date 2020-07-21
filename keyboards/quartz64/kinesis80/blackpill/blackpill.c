@@ -24,6 +24,7 @@ void matrix_init_kb(void) {
   setPinOutput(NUM_LOCK_LED_PIN);
   setPinOutput(CAPS_LOCK_LED_PIN);
   setPinOutput(SCROLL_LOCK_LED_PIN);
+  setPinOutput(LED4_PIN);
   
   writePinLow(NUM_LOCK_LED_PIN);
   writePinLow(CAPS_LOCK_LED_PIN);
