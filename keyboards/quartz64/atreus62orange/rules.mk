@@ -1,5 +1,5 @@
 MCU = atmega32u4
-F_CPU = 16000000
+F_CPU = 8000000
 ARCH = AVR8
 F_USB = $(F_CPU)
 OPT_DEFS += -DINTERRUPT_CONTROL_ENDPOINT
@@ -12,7 +12,7 @@ OPT_DEFS += -DINTERRUPT_CONTROL_ENDPOINT
 #   QMK DFU      qmk-dfu
 #   ATmega32A    bootloadHID
 #   ATmega328P   USBasp
-BOOTLOADER = lufa-dfu
+BOOTLOADER = caterina
 
 # Build Options
 #   change to "no" to disable the options, or define them in the Makefile in
