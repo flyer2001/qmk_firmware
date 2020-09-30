@@ -20,17 +20,19 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "config_common.h"
 
 /* USB Device descriptor parameter */
-#define VENDOR_ID    0xFEED
-#define PRODUCT_ID   0x0000
-#define DEVICE_VER   0x0001
+#define VENDOR_ID 0xFEED
+#define PRODUCT_ID 0x0000
+#define DEVICE_VER 0x0001
 #define MANUFACTURER FUJITU
-#define PRODUCT      T010
+#define PRODUCT T010
 /* key matrix size */
 #define MATRIX_ROWS 8
 #define MATRIX_COLS 13
 
-#define MATRIX_ROW_PINS { B8, B9, C13, A4, A0, A1, A2, A3 }
-#define MATRIX_COL_PINS { B7, B6, B5, B4, B3, A15, A10, A9, A8, B0, B1, B10, B11 }
+#define MATRIX_ROW_PINS \
+    { B8, B9, C13, A4, A0, A1, A2, A3 }
+#define MATRIX_COL_PINS \
+    { B7, B6, B5, B4, B3, A15, A10, A9, A8, B0, B1, B10, B11 }
 #define UNUSED_PINS
 
 /* COL2ROW, ROW2COL */
