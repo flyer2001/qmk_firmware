@@ -21,7 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* USB Device descriptor parameter */
 #define VENDOR_ID 0xFEED
-#define PRODUCT_ID 0x0000
+#define PRODUCT_ID 0x6FAA
 #define MANUFACTURER QMK
 #define PRODUCT Kinesis 80
 #define DESCRIPTION handwired Kinesis

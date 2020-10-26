@@ -1,5 +1,5 @@
 /*
-Copyright 2015 Jun Wako <wakojun@gmail.com>
+Copyright 2020 DmNosachev
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -19,26 +19,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define DEVICE_VER 0x0002
 
-#define USBSTR_MANUFACTURER    'T', '\x00', 'M', '\x00', 'K', '\x00', ' ', '\x00', '\xc6', '\x00'
-#define USBSTR_PRODUCT         'C', '\x00', 'h', '\x00', 'i', '\x00', 'b', '\x00', 'i', '\x00', 'O', '\x00', 'S', '\x00', ' ', '\x00', 'Q', '\x00', 'M', '\x00', 'K', '\x00'
-
 #undef MATRIX_ROW_PINS
 #undef MATRIX_COL_PINS
 
-<<<<<<< HEAD
-#define MATRIX_ROW_PINS { B8, B9, C13, B7, B6, B4, B3 }
-=======
 //v.1.0
 //#define MATRIX_ROW_PINS { B8, B9, C13, B7, B6, B4, B3 }
 //v.1.1
 #define MATRIX_ROW_PINS { B8, B9, C13, B7, B6, B5, B4 }
->>>>>>> 96942f94c96fc89e26d97f412344d0a79dfd6813
 #define MATRIX_COL_PINS { A6, A7, B0, B1, B10, B11, A0, A1, A2, A3, A4, A5 }
 
 #define NUM_LOCK_LED_PIN B14
 #define CAPS_LOCK_LED_PIN B13
 #define SCROLL_LOCK_LED_PIN B15
 #define LED4_PIN A8
-
-//#define A9_AUDIO
-
