@@ -51,6 +51,7 @@
 }
 /*         0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F    G    H    I    J */
 
+<<<<<<< HEAD
 #define LAYOUT_DEBUG( \
 	K00, K01, K02, K03, K04, K05, K06, K07, K08, K09, K0A, K0B, K0C, K0D, K0E, K0F, K0G, K0H, K0I, K0J, \
   K10, K11, K12, K13, K14, K15, K16, K17, K18, K19, K1A, K1B, K1C, K1D, K1E, K1F, K1G, K1H, K1I, K1J, \
@@ -73,4 +74,6 @@
 }
 /*         0    1    2    3    4    5    6    7    8    9    A    B    C    D    E    F    G    H    I    J */
 
+=======
+>>>>>>> a44a8338c1a2d4095dd68f04089d0abb853e37c2
 
