@@ -14,7 +14,7 @@
 	#include "nguyenvietyen.h"
 #endif
 #ifdef KEYBOARD_kinesis_kinbp
-	#include "kint2pp.h"
+	#include "kinbp.h"
 #endif
 
 #include "quantum.h"
