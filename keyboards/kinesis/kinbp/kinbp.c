@@ -24,10 +24,10 @@ void matrix_init_kb(void) {
   setPinOutput(SCROLL_LOCK_LED_PIN);
   setPinOutput(LED4_PIN);
   
-  writePinLow(NUM_LOCK_LED_PIN);
-  writePinLow(CAPS_LOCK_LED_PIN);
-  writePinLow(SCROLL_LOCK_LED_PIN);
-  writePinLow(LED4_PIN);
+  writePinHigh(NUM_LOCK_LED_PIN);
+  writePinHigh(CAPS_LOCK_LED_PIN);
+  writePinHigh(SCROLL_LOCK_LED_PIN);
+  writePinHigh(LED4_PIN);
 
 	matrix_init_user();
 }
@@ -35,9 +35,9 @@ void matrix_init_kb(void) {
 bool led_update_kb(led_t led_state) {
 bool res = led_update_user(led_state);
     if(res) {
-        writePin(NUM_LOCK_LED_PIN, led_state.num_lock);
-        writePin(CAPS_LOCK_LED_PIN, led_state.caps_lock);
-        writePin(SCROLL_LOCK_LED_PIN, led_state.scroll_lock);
+        writePin(NUM_LOCK_LED_PIN, !led_state.num_lock);
+        writePin(CAPS_LOCK_LED_PIN, !led_state.caps_lock);
+        writePin(SCROLL_LOCK_LED_PIN, !led_state.scroll_lock);
     }
     return res;
 }
