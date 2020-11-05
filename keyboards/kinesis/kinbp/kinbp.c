@@ -22,12 +22,12 @@ void matrix_init_kb(void) {
   setPinOutput(NUM_LOCK_LED_PIN);
   setPinOutput(CAPS_LOCK_LED_PIN);
   setPinOutput(SCROLL_LOCK_LED_PIN);
-  setPinOutput(LED4_PIN);
+  setPinOutput(KEYPAD_LED_PIN);
   
   writePinHigh(NUM_LOCK_LED_PIN);
   writePinHigh(CAPS_LOCK_LED_PIN);
   writePinHigh(SCROLL_LOCK_LED_PIN);
-  writePinHigh(LED4_PIN);
+  writePinHigh(KEYPAD_LED_PIN);
 
 	matrix_init_user();
 }
