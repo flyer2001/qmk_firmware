@@ -21,13 +21,6 @@ enum layer_names {
     _FN
 };
 
-<<<<<<< HEAD
-=======
-enum custom_keycodes {
-    MC3Z = SAFE_RANGE
-};
-
->>>>>>> 07856c27d93b5aaf77951b07738797362df1cddc
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
 ,-------------------------------------------------------------------------------------------------------------------------------------,

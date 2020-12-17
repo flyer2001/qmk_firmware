@@ -28,11 +28,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* key matrix size */
 #define MATRIX_ROWS 8
-<<<<<<< HEAD
 #define MATRIX_COLS 14
-=======
-#define MATRIX_COLS 16
->>>>>>> 07856c27d93b5aaf77951b07738797362df1cddc
 
 /*
  * Keyboard Matrix Assignments
@@ -45,11 +41,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
 #define MATRIX_ROW_PINS { D2, D3, C6, C7, D5, D4, E6, D1 }
-<<<<<<< HEAD
 #define MATRIX_COL_PINS { F0, F1, F4, F5, F6, F7, B6, B5, B4, D7, B0, B1, B2, B3}
-=======
-#define MATRIX_COL_PINS { F0, F1, F4, F5, F6, F7, B6, B5, B4, D7, B0, B1, B2, B3, B7, D0 }
->>>>>>> 07856c27d93b5aaf77951b07738797362df1cddc
 #define UNUSED_PINS
 
 /* COL2ROW, ROW2COL */
