@@ -23,6 +23,10 @@ RGBLIGHT_ENABLE = no        # Enable keyboard RGB underglow
 BLUETOOTH_ENABLE = no       # Enable Bluetooth
 AUDIO_ENABLE = no           # Audio output
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> c86c07678 (roman keymap)
+=======
+
+>>>>>>> 871bcf069229c28ad2fc09aac72b3722bcec849d
