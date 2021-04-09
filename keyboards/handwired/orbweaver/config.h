@@ -54,6 +54,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* Bootmagic Lite key configuration */
 #define BOOTMAGIC_LITE_ROW 0
 #define BOOTMAGIC_LITE_COLUMN 0
+<<<<<<< HEAD
 
 #define MUSIC_MASK (keycode != KC_NO)
 #define MIDI_ADVANCED
+=======
+>>>>>>> 0b142f87a9662b2c611f7c78c98c8d3c59166808

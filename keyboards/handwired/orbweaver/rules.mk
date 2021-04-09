@@ -20,4 +20,7 @@ BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
 RGBLIGHT_ENABLE = no        # Enable keyboard RGB underglow
 BLUETOOTH_ENABLE = no       # Enable Bluetooth
 AUDIO_ENABLE = no           # Audio output
+<<<<<<< HEAD
 MIDI_ENABLE = yes
+=======
+>>>>>>> 0b142f87a9662b2c611f7c78c98c8d3c59166808
