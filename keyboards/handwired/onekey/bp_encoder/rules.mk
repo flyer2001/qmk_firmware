@@ -1,10 +1,10 @@
 # MCU name
-MCU = STM32F103
+MCU = STM32F401
 
-# Bootloader selection
-BOOTLOADER = stm32duino
+# Address of the bootloader in system memory
+STM32_BOOTLOADER_ADDRESS = 0x1FFF0000
 
-# Enter lower-power sleep mode when on the ChibiOS idle thread
-OPT_DEFS += -DCORTEX_ENABLE_WFI_IDLE=TRUE
-
-ENCODER_ENABLE = yes
+# Build Options
+#   change yes to no to disable
+#
+KEYBOARD_SHARED_EP       = yes

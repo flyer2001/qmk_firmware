@@ -1,4 +1,4 @@
-/* Copyright 2019
+/* Copyright 2020 Sergey Vlasov (sigprof)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,21 +14,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#pragma once
+#include QMK_KEYBOARD_H
 
-#include "config_common.h"
-
-#define MATRIX_COL_PINS { B0 }
-#define MATRIX_ROW_PINS { A7 }
-#define UNUSED_PINS
-
-#define BACKLIGHT_PIN           A0
-#define BACKLIGHT_PWM_DRIVER    PWMD5
-#define BACKLIGHT_PWM_CHANNEL   1
-
-#define RGB_DI_PIN A1
-
-#define ADC_PIN A0
-
-#define ENCODERS_PAD_A { B6 }
-#define ENCODERS_PAD_B { B7 }
+void board_init(void) {
+    // B9 is configured as I2C1_SDA in the board file; that function must be
+    // disabled before using B7 as I2C1_SDA.
+    setPinInputHigh(B9);
+}
