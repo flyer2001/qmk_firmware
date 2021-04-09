@@ -8,3 +8,5 @@ STM32_BOOTLOADER_ADDRESS = 0x1FFF0000
 #   change yes to no to disable
 #
 KEYBOARD_SHARED_EP       = yes
+
+ENCODER_ENABLE = yes
