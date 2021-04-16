@@ -41,7 +41,7 @@ template
 
 /*
 ,---------------------------------------------,
-|SETUP| |     |     |     |     |     | |     |
+|SETUP| |bl_tg|bl_st|     |     |     | |     |
 |-----| |-------------------------------------|
 |MIDI0| |     |     |     |     |     | |     |
 |------ |-------------------------------------'
@@ -54,10 +54,10 @@ template
 */
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_SETUP] = LAYOUT(
-        _______,  _______,   _______,   _______,  _______, _______,  _______,
-        _______,  _______,   _______,   _______,  _______, _______,  _______,
-        _______,  _______,   _______,   _______,  _______, _______,
-        _______,  _______,   _______,   _______,  _______, RESET,
+        TO(_SETUP),  BL_TOGG,   BL_STEP,   _______,  _______, _______,  _______,
+        TO(_MIDI0),  _______,   _______,   _______,  _______, _______,  _______,
+        TO(_MIDI1),  _______,   _______,   _______,  _______, _______,
+        TO(_MIDI2),  _______,   _______,   _______,  _______, RESET,
                              _______, _______, _______, _______
     ),
 /*
@@ -81,3 +81,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                  _______, _______, _______, _______
         )
 };
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+    switch (get_highest_layer(state)) {
+    case _SETUP:
+        writePinLow(LED1_PIN);
+        break;
+    default: //  for any other layers, or the default layer
+        writePinHigh(LED1_PIN);
+        break;
+    }
+  return state;
+}
