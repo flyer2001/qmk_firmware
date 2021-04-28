@@ -22,9 +22,9 @@ void matrix_init_kb(void) {
   setPinOutput(LED2_PIN);
   setPinOutput(LED3_PIN);
   
-  writePinLow(LED1_PIN);
-  writePinLow(LED2_PIN);
-  writePinLow(LED3_PIN);
+  writePinHigh(LED1_PIN);
+  writePinHigh(LED2_PIN);
+  writePinHigh(LED3_PIN);
 
   matrix_init_user();
 }

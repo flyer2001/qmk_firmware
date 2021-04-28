@@ -17,12 +17,12 @@
  */
 #include QMK_KEYBOARD_H
 
-#define L1L writePinLow(LED1_PIN);
-#define L2L writePinLow(LED2_PIN);
-#define L3L writePinLow(LED3_PIN);
-#define L1H writePinHigh(LED1_PIN);
-#define L2H writePinHigh(LED2_PIN);
-#define L3H writePinHigh(LED3_PIN);
+#define L1H writePinLow(LED1_PIN);
+#define L2H writePinLow(LED2_PIN);
+#define L3H writePinLow(LED3_PIN);
+#define L1L writePinHigh(LED1_PIN);
+#define L2L writePinHigh(LED2_PIN);
+#define L3L writePinHigh(LED3_PIN);
 
 enum layer_names {
     _SETUP,
