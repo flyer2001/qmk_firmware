@@ -42,10 +42,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* serial.c configuration for split keyboard */
 #define SOFT_SERIAL_PIN D0
 
+#define EE_HANDS
+
 /* ws2812 RGB LED */
 #define RGB_DI_PIN D3
 
 #define RGBLED_NUM 12    // Number of LEDs
+
+#define RGBLIGHT_SPLIT
 
 /*
  * Feature disable options
