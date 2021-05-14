@@ -49,7 +49,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define RGBLED_NUM 12    // Number of LEDs
 
-#define RGBLIGHT_SPLIT
+#define RGBLED_SPLIT { 6, 6 }
 
 /*
  * Feature disable options
