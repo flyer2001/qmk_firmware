@@ -44,10 +44,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MATRIX_COL_PINS { A7, A6, B0, A9, A10, B15, A8, A5, A4, A1, A0, B3, C14, C15}
 #define UNUSED_PINS
 
-/* encoder in place of numpad minus key */
-#define ENCODERS_PAD_A { B1 }
-#define ENCODERS_PAD_B { B10 }
-
 /* COL2ROW, ROW2COL */
 #define DIODE_DIRECTION COL2ROW
 

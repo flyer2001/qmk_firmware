@@ -1,4 +1,4 @@
-/* Copyright 2020 DmNosachev
+/* Copyright 2021 DmNosachev
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -45,7 +45,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LGUI, KC_LCTL, KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, KC_ENT,       TO(_MUS), KC_NLCK,  KC_P4,   KC_P5,   KC_P6,   KC_COMM, 
     KC_APP, KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT, KC_DEL,   KC_UP,    MO(_FN),  KC_P1,   KC_P2,   KC_P3,   KC_PENT,
     KC_PSCR,    KC_LALT,                  KC_SPACE,                                      KC_RALT, KC_LEFT,  KC_DOWN,  KC_RIGHT,     KC_P0,   KC_PDOT
-    )
+    ),
 /*
 ,-------------------------------------------------------------------------------------------------------------------------------,
 |Reset|      | |      |      |      |      |     | |    |       |      |      |      |   |     |     |  |     |     |     |     |
@@ -60,7 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 |----------------------------------------------------------------------------------------------------|  |-----------|-----|     |
 |     |    |        |                                                    |         |     |     |     |  |           |     |     |
 `-------------------------------------------------------------------------------------------------------------------------------'
-
+*/
 
 [_FN] = LAYOUT(
     RESET,   _______,    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,         _______, _______,   _______, _______, _______, _______,
@@ -70,7 +70,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,   _______, _______,   _______, _______, _______, _______,
     _______,    _______,                                 _______,                                               _______, _______,   _______, _______,        _______, _______
     ),
-
+/*
 ,-------------------------------------------------------------------------------------------------------------------------------,
 |     |      | |      |      |      |      |     | |    |       |      |      |      |   |     |     |  |     |     |     |     |
 |----------------------------------------------------------------------------------------------------|  |-----------------------|
@@ -84,7 +84,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 |----------------------------------------------------------------------------------------------------|  |-----------|-----|     |
 |     |    |        |                                                    |         | msL | msD | msR |  |           |     |     |
 `-------------------------------------------------------------------------------------------------------------------------------'
-
+*/
 
 [_MUS] = LAYOUT(
     _______, _______,    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,         _______,   _______,   _______, _______, _______, _______,
@@ -94,10 +94,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_BTN1,   KC_MS_U,   KC_BTN2,   _______, _______, _______, _______,
     _______,    _______,                                 _______,                                               _______, KC_MS_L,   KC_MS_D,   KC_MS_R,        _______, _______
     )
-*/
 };
 
-void encoder_update_user(uint8_t index, bool clockwise) {
+bool encoder_update_user(uint8_t index, bool clockwise) {
   if (index == 0) {
     if (clockwise) {
       tap_code(KC_PGUP);
@@ -106,6 +105,7 @@ void encoder_update_user(uint8_t index, bool clockwise) {
       tap_code(KC_PGDN);
     }
   }
+  return true;
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
