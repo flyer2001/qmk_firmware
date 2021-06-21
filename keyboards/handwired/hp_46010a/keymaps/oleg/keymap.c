@@ -108,6 +108,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
   return true;
 }
 
+/*
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   // If console is enabled, it will print the matrix position and status of each key pressed
 #ifdef CONSOLE_ENABLE
@@ -115,3 +116,4 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 #endif 
   return true;
 }
+*/
