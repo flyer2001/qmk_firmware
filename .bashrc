@@ -1,0 +1,1 @@
+export PATH="/home/quartz/.local/bin:$PATH"
