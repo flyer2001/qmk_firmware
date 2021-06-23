@@ -103,7 +103,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	|------+------+------+------+------|------.,------|------+------+------+------+------|
 	| trns |r_tog | r_hue| r_sat| r_val|      ||      |   +  |   1  |   2  |   3  | trns |
 	|------+------+------+------+------|      ||      |------+------+------+------+------|
-	| trns | Tab  |RESET |      | trns |------'`------| trns |   0  |   -  |  +=  | trns |
+	| trns | Tab  |RESET |capslk| trns |------'`------| trns |   0  |   -  |  +=  | trns |
 	`----------------------------------'              `----------------------------------'
 */
 
@@ -111,7 +111,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                   KC_PSLS, KC_7, KC_8,    KC_9,   KC_PDOT,
     _______, KC_CIRC, KC_AMPR, KC_RGHT, KC_ASTR,                   KC_PAST, KC_4, KC_5,    KC_6,   _______,
     _______, RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI,                   KC_PPLS, KC_1, KC_2,    KC_3,   _______,
-    _______, KC_TAB , RESET,   _______, _______, _______, _______, _______, KC_0, KC_PMNS, KC_EQL, _______
+    _______, KC_TAB , RESET,   KC_CAPS, _______, _______, _______, _______, KC_0, KC_PMNS, KC_EQL, _______
     )
 };
 
