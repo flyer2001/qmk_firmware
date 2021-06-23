@@ -22,6 +22,41 @@ enum custom_keycodes {
   PWD3,				      	// KP password
 };
 
+const rgblight_segment_t PROGMEM my_layer1_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+    {0, 12, HSV_CORAL}
+);
+
+const rgblight_segment_t PROGMEM my_layer2_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+    {5, 2, HSV_ORANGE}
+);
+
+const rgblight_segment_t PROGMEM my_layer3_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+    {5, 2, HSV_CYAN}
+);
+
+const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
+    my_layer1_layer,
+    my_layer2_layer,
+    my_layer3_layer
+);
+
+void keyboard_post_init_user(void) {
+    // Enable the LED layers
+    rgblight_layers = my_rgb_layers;
+}
+
+layer_state_t default_layer_state_set_user(layer_state_t state) {
+    rgblight_set_layer_state(1, layer_state_cmp(state, _QW));
+    return state;
+}
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+    //rgblight_set_layer_state(0, layer_state_cmp(state, _QW));
+    rgblight_set_layer_state(1, layer_state_cmp(state, _RS));
+    rgblight_set_layer_state(2, layer_state_cmp(state, _LW));
+    return state;
+}
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
 	,----------------------------------.              ,----------------------------------.
@@ -81,9 +116,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  #ifdef CONSOLE_ENABLE
-    uprintf("row: %u, col: %u, pressed: %u\n", record->event.key.row, record->event.key.col, record->event.pressed);
-  #endif
   switch (keycode) {
     // Alt + Escape for Alt + Tab
     case KC_ESC:
