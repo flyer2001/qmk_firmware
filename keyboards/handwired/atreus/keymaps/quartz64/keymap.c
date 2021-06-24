@@ -19,6 +19,8 @@ enum custom_keycodes {
   COMP_FR_QUOTES,		  // Compose: french quotes
   COMP_NBSP_EM_DASH,	// Compose: nbsp followed by em dash
   COMP_NBSP,		    	// Compose: nbsp
+  PWD1,
+  PWD2,
   PWD3,				      	// KP password
 };
 
@@ -27,11 +29,11 @@ const rgblight_segment_t PROGMEM my_layer1_layer[] = RGBLIGHT_LAYER_SEGMENTS(
 );
 
 const rgblight_segment_t PROGMEM my_layer2_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {5, 2, HSV_ORANGE}
+    {0, 5, HSV_ORANGE}
 );
 
 const rgblight_segment_t PROGMEM my_layer3_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {5, 2, HSV_CYAN}
+    {6, 5, HSV_CYAN}
 );
 
 const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
@@ -45,11 +47,12 @@ void keyboard_post_init_user(void) {
     rgblight_layers = my_rgb_layers;
 }
 
+/*
 layer_state_t default_layer_state_set_user(layer_state_t state) {
     rgblight_set_layer_state(1, layer_state_cmp(state, _QW));
     return state;
 }
-
+*/
 layer_state_t layer_state_set_user(layer_state_t state) {
     //rgblight_set_layer_state(0, layer_state_cmp(state, _QW));
     rgblight_set_layer_state(1, layer_state_cmp(state, _RS));
@@ -60,38 +63,38 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
 	,----------------------------------.              ,----------------------------------.
-	|   Q  |   W  |   E  |   R  |   T  |              |   Y  |   U  |   I  |   O  |   P  |
+	|Q/Alt | W/Tab|   E  |   R  |   T  |              |   Y  |   U  |   I  |   O  |   P  |
 	|------+------+------+------+------|              |------+------+------+------+------|
 	|A/Ctrl|   S  |   D  |   F  |   G  |              |   H  |   J  |   K  |   L  |;/Ctrl|
 	|------+------+------+------+------|------.,------|------+------+------+------+------|
-	|Z/Shft|   X  |   C  |   V  |   B  |Space ||Enter |   N  |   M  |   ,  |   .  |?/Shft|
+	|Z/Shft|   X  |   C  |   V  |   B  |Bkspc ||Delete|   N  |   M  |   ,  |   .  |?/Shft|
 	|------+------+------+------+------|      ||      |------+------+------+------+------|
-	| ~/Alt|  ESC |   -  |  GUI | BS/LW|------'`------|DEL/RS|  |\  |   [  |   ]  |  "'  |
+	|   ~  |  ESC |   -  |  GUI |Spc/LW|------'`------|Ent/RS|  |\  |   [  |   ]  |  "'  |
 	`----------------------------------'              `----------------------------------'
 */
   [_QW] = LAYOUT( /* Qwerty */
-    KC_Q,           KC_W,    KC_E,    KC_R,    KC_T,                             KC_Y,            KC_U,    KC_I,    KC_O,    KC_P,
+    LALT_T(KC_Q),   KC_W,    KC_E,    KC_R,    KC_T,                             KC_Y,            KC_U,    KC_I,    KC_O,    KC_P,
     LCTL_T(KC_A),   KC_S,    KC_D,    KC_F,    KC_G,                             KC_H,            KC_J,    KC_K,    KC_L,    RCTL_T(KC_SCLN),
     LSFT_T(KC_Z),   KC_X,    KC_C,    KC_V,    KC_B,                             KC_N,            KC_M,    KC_COMM, KC_DOT,  RSFT_T(KC_SLSH),
-    LALT_T(KC_GRV), KC_ESC,  KC_MINS, KC_LGUI, LT(_LW, KC_BSPC), KC_SPC, KC_ENT, LT(_RS, KC_DEL), KC_BSLS, KC_LBRC, KC_RBRC, KC_QUOT
+    KC_GRV,         KC_ESC,  KC_MINS, KC_LGUI, LT(_LW, KC_SPC), KC_BSPC, KC_DEL, LT(_RS, KC_ENT), KC_BSLS, KC_LBRC, KC_RBRC, KC_QUOT
   ),
   
 /*
 	,----------------------------------.              ,----------------------------------.
-	| PrnSc|      |  up  |      | PgUp |              | Home |  F7  |  F8  |  F9  |      |
+	| PrnSc| pwd1 |  up  | pwd2 | PgUp |              | Home |  F7  |  F8  |  F9  |      |
 	|------+------+------+------+------|              |------+------+------+------+------|
 	| trns | left | down | right| PgDn |              |  End |  F4  |  F5  |  F6  | trns |
 	|------+------+------+------+------|------.,------|------+------+------+------+------|
-	| trns | MC2  |  MC3 |   (  |   )  |      ||      |      |  F1  |  F2  |  F3  | trns |
+	| trns | MC2  |  MC3 |   (  |   )  |      ||      | AltGr|  F1  |  F2  |  F3  | trns |
 	|------+------+------+------+------|      ||      |------+------+------+------+------|
 	| trns | C+S  |  Ins |  MC1 | trns |------'`------| trns |  F10 |  F11 |  F12 | trns |
 	`----------------------------------'              `----------------------------------'
 */
 
   [_RS] = LAYOUT( /* RAISE  */
-    KC_PSCR, _______,        KC_UP,   _______, KC_PGUP,                   KC_HOME, KC_F7,   KC_F8,  KC_F9,  _______,
+    KC_PSCR, PWD1,           KC_UP,   PWD2,    KC_PGUP,                   KC_HOME, KC_F7,   KC_F8,  KC_F9,  _______,
     _______, KC_LEFT,        KC_DOWN, KC_RGHT, KC_PGDN,                   KC_END,  KC_F4,   KC_F5,  KC_F6,  _______,
-    _______, MC2,            MC3,     KC_LPRN, KC_RPRN,                   _______, KC_F1,   KC_F2,  KC_F3,  _______,
+    _______, MC2,            MC3,     KC_LPRN, KC_RPRN,                   KC_RALT, KC_F1,   KC_F2,  KC_F3,  _______,
     _______, LCTL(KC_LSFT),  _______, MC1,     _______, _______, _______, _______, KC_F10,  KC_F11, KC_F12, _______
     ),
 
@@ -109,7 +112,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_LW] = LAYOUT( /* LOWER */
     KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                   KC_PSLS, KC_7, KC_8,    KC_9,   KC_PDOT,
-    _______, KC_CIRC, KC_AMPR, KC_RGHT, KC_ASTR,                   KC_PAST, KC_4, KC_5,    KC_6,   _______,
+    _______, KC_CIRC, KC_AMPR, KC_ASTR, PWD3,                      KC_PAST, KC_4, KC_5,    KC_6,   _______,
     _______, RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI,                   KC_PPLS, KC_1, KC_2,    KC_3,   _______,
     _______, KC_TAB , RESET,   KC_CAPS, _______, _______, _______, _______, KC_0, KC_PMNS, KC_EQL, _______
     )
@@ -117,8 +120,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
-    // Alt + Escape for Alt + Tab
-    case KC_ESC:
+    // Alt + W for Alt + Tab
+    case KC_W:
         // Detect the activation of only Left Alt
         if ((get_mods() & MOD_BIT(KC_LALT)) == MOD_BIT(KC_LALT)) {
             if (record->event.pressed) {
@@ -131,7 +134,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             // Do not let QMK process the keycode further
             return false;
         }
-        // Else, let QMK process the KC_ESC keycode as usual
+        // Else, let QMK process the KC_W keycode as usual
         return true;
         
 	  case MC1:
@@ -154,6 +157,20 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       // NB-space
       if (record->event.pressed) {
         SEND_STRING(SS_TAP(X_RALT)"  ");
+      }
+      return false;
+      break;
+	  
+	  case PWD1:
+      if (record->event.pressed) {
+        SEND_STRING("NakedLunch1991"SS_TAP(X_ENTER));
+      }
+      return false;
+      break;
+	  
+	  case PWD2:
+      if (record->event.pressed) {
+        SEND_STRING("O94nx4sUWHc4akud"SS_TAP(X_ENTER));
       }
       return false;
       break;
