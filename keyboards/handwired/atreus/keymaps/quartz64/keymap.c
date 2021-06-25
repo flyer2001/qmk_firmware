@@ -63,20 +63,20 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
 	,----------------------------------.              ,----------------------------------.
-	|Q/Alt | W/Tab|   E  |   R  |   T  |              |   Y  |   U  |   I  |   O  |   P  |
+	|Q/Alt |   W  |   E  |   R  |   T  |              |   Y  |   U  |   I  |   O  |   P  |
 	|------+------+------+------+------|              |------+------+------+------+------|
 	|A/Ctrl|   S  |   D  |   F  |   G  |              |   H  |   J  |   K  |   L  |;/Ctrl|
 	|------+------+------+------+------|------.,------|------+------+------+------+------|
 	|Z/Shft|   X  |   C  |   V  |   B  |Bkspc ||Delete|   N  |   M  |   ,  |   .  |?/Shft|
 	|------+------+------+------+------|      ||      |------+------+------+------+------|
-	|   ~  |  ESC |   -  |  GUI |Spc/LW|------'`------|Ent/RS|  |\  |   [  |   ]  |  "'  |
+	|   ~  |  Tab |   -  |  GUI |Spc/LW|------'`------|Ent/RS|  |\  |   [  |   ]  |  "'  |
 	`----------------------------------'              `----------------------------------'
 */
   [_QW] = LAYOUT( /* Qwerty */
     LALT_T(KC_Q),   KC_W,    KC_E,    KC_R,    KC_T,                             KC_Y,            KC_U,    KC_I,    KC_O,    KC_P,
     LCTL_T(KC_A),   KC_S,    KC_D,    KC_F,    KC_G,                             KC_H,            KC_J,    KC_K,    KC_L,    RCTL_T(KC_SCLN),
     LSFT_T(KC_Z),   KC_X,    KC_C,    KC_V,    KC_B,                             KC_N,            KC_M,    KC_COMM, KC_DOT,  RSFT_T(KC_SLSH),
-    KC_GRV,         KC_ESC,  KC_MINS, KC_LGUI, LT(_LW, KC_SPC), KC_BSPC, KC_DEL, LT(_RS, KC_ENT), KC_BSLS, KC_LBRC, KC_RBRC, KC_QUOT
+    KC_GRV,         KC_TAB,  KC_MINS, KC_LGUI, LT(_LW, KC_SPC), KC_BSPC, KC_DEL, LT(_RS, KC_ENT), KC_BSLS, KC_LBRC, KC_RBRC, KC_QUOT
   ),
   
 /*
@@ -106,7 +106,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	|------+------+------+------+------|------.,------|------+------+------+------+------|
 	| trns |r_tog | r_hue| r_sat| r_val|      ||      |   +  |   1  |   2  |   3  | trns |
 	|------+------+------+------+------|      ||      |------+------+------+------+------|
-	| trns | Tab  |RESET |capslk| trns |------'`------| trns |   0  |   -  |  +=  | trns |
+	| trns | Esc  |RESET |capslk| trns |------'`------| trns |   0  |   -  |  +=  | trns |
 	`----------------------------------'              `----------------------------------'
 */
 
@@ -114,29 +114,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                   KC_PSLS, KC_7, KC_8,    KC_9,   KC_PDOT,
     _______, KC_CIRC, KC_AMPR, KC_ASTR, PWD3,                      KC_PAST, KC_4, KC_5,    KC_6,   _______,
     _______, RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI,                   KC_PPLS, KC_1, KC_2,    KC_3,   _______,
-    _______, KC_TAB , RESET,   KC_CAPS, _______, _______, _______, _______, KC_0, KC_PMNS, KC_EQL, _______
+    _______, KC_ESC , RESET,   KC_CAPS, _______, _______, _______, _______, KC_0, KC_PMNS, KC_EQL, _______
     )
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
-    // Alt + W for Alt + Tab
-    case KC_W:
-        // Detect the activation of only Left Alt
-        if ((get_mods() & MOD_BIT(KC_LALT)) == MOD_BIT(KC_LALT)) {
-            if (record->event.pressed) {
-                // No need to register KC_LALT because it's already active.
-                // The Alt modifier will apply on this KC_TAB.
-                register_code(KC_TAB);
-            } else {
-                unregister_code(KC_TAB);
-            }
-            // Do not let QMK process the keycode further
-            return false;
-        }
-        // Else, let QMK process the KC_W keycode as usual
-        return true;
-        
 	  case MC1:
       // French quotes
       if (record->event.pressed) {
@@ -146,14 +129,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
 	  
 	  case MC2:
-      // NB-space + mdash + space 
+      // NB-space + mdash + space
       if (record->event.pressed) {
         SEND_STRING(SS_TAP(X_RALT)"  "SS_TAP(X_RALT)"--- ");
       }
       return false;
       break;
 	  
-	  case MC3:
+	  case MC3:                                                                                                             
       // NB-space
       if (record->event.pressed) {
         SEND_STRING(SS_TAP(X_RALT)"  ");
