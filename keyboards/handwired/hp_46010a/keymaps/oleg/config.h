@@ -20,3 +20,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* encoder in place of numpad minus key */
 #define ENCODERS_PAD_A { B1 }
 #define ENCODERS_PAD_B { B10 }
+
+#define TAP_CODE_DELAY 50
