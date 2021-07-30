@@ -1,4 +1,3 @@
-
 #pragma once
 
 #include "quantum.h"
@@ -44,7 +43,7 @@
     { kB0,  kB1,  kB2,  kB3,  ___,  ___,  ___ }, \
     { kC0,  kC1,  kC2,  kC3,  kC4,  kC5,  ___ }, \
     { kD0,  kD1,  kD2,  kD3,  kD4,  kD5,  ___ }, \
-    { kE0,  kE1,  kE2,  kE3,  kE4,  kE5,  ___ } \
+    { kE0,  kE1,  kE2,  kE3,  kE4,  kE5,  ___ }, \
 }
 
 /*  ---------------- LEFT HAND -----------------   ---------------- RIGHT HAND ---------------- */
@@ -76,8 +75,7 @@
     { kE0,  kE1,  kE2,  kE3,  kE4,  kE5,  ___ }  \
 }
 
-
-#define LAYOUT_debug(                                   \
+#define LAYOUT_debug(                        \
     k00,  k01,  k02,  k03,  k04,  k05,  k06, \
     k10,  k11,  k12,  k13,  k14,  k15,  k16, \
     k20,  k21,  k22,  k23,  k24,  k25,  k26, \
@@ -110,26 +108,3 @@
     { kD0,  kD1,  kD2,  kD3,  kD4,  kD5,  kD6 }, \
     { kE0,  kE1,  kE2,  kE3,  kE4,  kE5,  kE6 } \
 }
-
-/*
-This is the Stapelberg matrix as published at
-https://github.com/stapelberg/kinesis-firmware/blob/master/kb_kinesis/config.kspec
-Along with the pins for each row and column
-             PB0 PB1 PB2 PB3 PB4 PB5 PB6
-             kx0 kx1 kx2 kx3 kx4 kx5 kx6
-PD0 k0x Row: EQL TAB CAP LSH X2  --  --
-PD1 k1x Row: 1   Q   A   Z   BQ  --  --
-PD2 k2x Row: 2   W   S   X   INS END --
-PD3 k3x Row: 3   E   D   C   LFT HOM BAK
-PD4 k4x Row: 4   R   F   V   --  --  DEL
-PD5 k5x Row: 5   T   G   B   RT  LAL LCT
-PD6 k6x Row: 6   Y   H   N   UP  SPC PGD
-PD7 k7x Row: 7   U   J   M   --  RET --
-PC0 k8x Row: 8   I   K   COM DWN RCT PGU
-PC1 k9x Row: 9   O   L   PER LBR --  RAL
-PC2 kAx Row: 0   P   SEM SLA RBR --  --
-PC3 kBx Row: MIN BSL APO RSH X1  --  --
-PC4 kCx Row: ESC F3  F6  F9  F12 PAU --
-PC5 kDx Row: F1  F4  F7  F10 PRT PRG --
-PC6 kEx Row: F2  F5  F8  F11 SLK KEY --
-*/

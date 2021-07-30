@@ -31,6 +31,7 @@
 /* COL2ROW or ROW2COL */
 #define DIODE_DIRECTION COL2ROW
 
+/*
 #define I2C_DRIVER I2CD1
 #define EEPROM_I2C_24LC128
-
+*/
