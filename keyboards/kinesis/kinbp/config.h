@@ -18,10 +18,10 @@
  *                  ROW2COL = ROW = Anode (+), COL = Cathode (-, marked on diode)
  *
 */
-#define MATRIX_ROW_PINS { A7, B0, B1, B10, B11, B8, A8, B15, B14, B13, A9, A10, A0, C14, C15 }
-/*                        R0  R1  R2  R3   R4   R5  R6  R7   R8   R9   RA  RB   RC  RD   RE */
+#define MATRIX_ROW_PINS { A7, B0, B1, B10, B11, B8, A8, B15, B14, B13, A9, A10, A0, B9, C15 }
+/*                        0   1   2    3    4   5   6    7    8    9    A   B    C   D    E */
 #define MATRIX_COL_PINS { A1, A2, A3, A4, A5, A6, B12 }
-/*                        C0  C1  C2  C3  C4  C5  C6 */
+/*                        0   1   2   3   4   5    6 */
 
 #define NUM_LOCK_LED_PIN B4
 #define CAPS_LOCK_LED_PIN B5
