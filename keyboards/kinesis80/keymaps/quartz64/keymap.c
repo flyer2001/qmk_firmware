@@ -13,7 +13,7 @@ enum layer_names {
 #define MC2 COMP_NBSP_EM_DASH
 #define MC3 COMP_NBSP
 
-// CAGS/⎈⎇◆⇧
+// CAGS/⌃⌥⌘⇧ Control - Option (Alt) - Command (GUI) - Shift
 // Left-hand home row mods
 #define HOME_A LCTL_T(KC_A)
 #define HOME_S LALT_T(KC_S)
@@ -50,11 +50,11 @@ enum custom_keycodes {
 * |--------+------+------+------+------+------|                           +------+------+------+------+------+--------|
 * |  Tab   |   Q  |   W  |   E  |   R  |   T  |                           |   Y  |   U  |   I  |   O  |   P  |   [    |
 * |--------+------+------+------+------+------|                           |------+------+------+------+------+--------|
-* |  CAPS  |   A  |   S  |   D  |   F  |   G  |                           |   H  |   J  |   K  |   L  |  ;:  | '"/NM  |
+* |  CAPS  |   A  |  S ⌃ |  D ⌥ |  F ⌘ |  G ⇧ |                           |   H  |  J ⇧ |  K ⌘ |  L ⌥ | ;: ⌃ | '"/NM  |
 * |--------+------+------+------+------+------|                           |------+------+------+------+------+--------|
 * |[/Shift |  Z   |   X  |   C  |   V  |   B  |                           |   N  |   M  |  ,.  |  .>  |  /?  |    ]   |
 * `--------+------+------+------+------+-------                           `------+------+------+------+------+--------'
-*          |  `~  |  MC  |   [  |   ]  |                                         | Left | Down |  Up  | Right|
+*          |  `~  |  MC  |   [  |⌃Space|                                         | Left | Down |  Up  | Right|
 *          `---------------------------'                                         `---------------------------'
 *                                        ,-------------.         ,-------------.
 *                                        |  Del |Enter |         | Space|Backsp|
@@ -71,8 +71,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LALT_T(KC_EQL),   KC_1,   KC_2,   KC_3,   KC_4,    KC_5,      KC_6,   KC_7,   KC_8,    KC_9,   KC_0,      KC_MINS,
     KC_TAB,           KC_Q,   KC_W,   KC_E,   KC_R,    KC_T,      KC_Y,   KC_U,   KC_I,    KC_O,   KC_P,      KC_LBRC,
     KC_CAPS,          HOME_A, HOME_S, HOME_D, HOME_F,  KC_G,      KC_H,   HOME_J, HOME_K,  HOME_L, HOME_SCLN, LT(_NM, KC_QUOT),
-    LSFT_T(KC_LBRC),          KC_Z, KC_X,   KC_C,   KC_V,      KC_B,      KC_N,   KC_M,   KC_COMM, KC_DOT, KC_SLSH,   KC_RBRC,
-                KC_GRV, MO(_MC), KC_LBRC, KC_RBRC,                        KC_LEFT,KC_DOWN, KC_UP,  KC_RGHT,
+    LSFT_T(KC_LBRC),  KC_Z,   KC_X,   KC_C,   KC_V,      KC_B,      KC_N,   KC_M,   KC_COMM, KC_DOT, KC_SLSH,   KC_RBRC,
+                      KC_GRV, MO(_MC),KC_LBRC,LCTL(KC_SPC),                 KC_LEFT,KC_DOWN, KC_UP,  KC_RGHT,
 			                               KC_DEL,  KC_ENTER,                  KC_SPC, KC_BSPC,
                                               KC_HOME,                   KC_PGUP,
                              KC_SPC, KC_BSPC, KC_END,                    KC_PGDN,KC_DEL, KC_ENTER
