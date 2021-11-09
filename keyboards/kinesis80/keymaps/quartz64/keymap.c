@@ -6,7 +6,7 @@
 enum layer_names {
     _BASE, // default layer
     _NM,  // numpad of right, mouse on left
-    _MC   // macros
+    _MC,   // macros
     _ARROW // arrows layer for right and left hand
 };
 
